@@ -24,7 +24,7 @@ const player = [
 
 function makeid(length) {
     let result           = '';
-    let characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    let characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     let charactersLength = characters.length;
     for ( let i = 0; i < length; i++ ) {
     result += characters.charAt(Math.floor(Math.random() * 
@@ -44,15 +44,27 @@ function makeidnum(length) {
 return result;
 }
 
+function generateRandomInt(min,max){
+    return Math.floor((Math.random() * (max-min)) +min);
+}
+
 const codice = player.map((codice) => {
     return makeid(3) + makeidnum(3);
     
 });
 
 const mediaTiri = player.map((media) => {
-    return 
+    return generateRandomInt(0,50);
+});
+
+const percentuale  = player.map((trepunti) => {
+    return generateRandomInt(0,100)+"%";
     
 });
+
+console.log(codice);
+console.log(mediaTiri);
+console.log(percentuale);
 
 
 
