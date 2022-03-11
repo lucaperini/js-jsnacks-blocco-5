@@ -80,7 +80,7 @@ const diesel = automobili.filter((element) => {
     if (element.alimentazione == 'diesel') return true; 
 });
 const altreAuto = automobili.filter((element) => {
-if (element.alimentazione != 'benzina') && (element.alimentazione != 'diesel') return true; 
+if ((element.alimentazione != 'benzina') && (element.alimentazione != 'diesel')) return true; 
 });
 
 console.table(benz);
